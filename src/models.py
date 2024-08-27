@@ -26,13 +26,11 @@ class User(Base):
     password = Column(String(50))
     person = relationship('Person',backref='user',lazy=True)
     like = relationship('Like',backref='user',lazy=True)
-class Person(Base):
-    __tablename__ = 'person'
-    id = Column(Integer, primary_key=True)
     name = Column(String(50), nullable=False)
     last_name = Column(String(50))
     email = Column(String(50),nullable=False)
-    phone = Column(String) 
+    phone = Column(Integer) 
+    
     user_id= Column(Integer, ForeignKey('user.id')) 
 class Planet(Base):
     __tablename__ = 'planet'

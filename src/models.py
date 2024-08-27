@@ -24,11 +24,11 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     user_name = Column(String(50), nullable=False)
     password = Column(String(50))
-    like = relationship('Like',backref='user',lazy=True)
     name = Column(String(50), nullable=False)
     last_name = Column(String(50))
     email = Column(String(50),nullable=False)
     phone = Column(Integer) 
+    like = relationship('Like',backref='user',lazy=True)
 
 class Planet(Base):
     __tablename__ = 'planet'

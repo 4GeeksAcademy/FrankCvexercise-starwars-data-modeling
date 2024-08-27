@@ -28,9 +28,8 @@ class User(Base):
     name = Column(String(50), nullable=False)
     last_name = Column(String(50))
     email = Column(String(50),nullable=False)
-    phone = Column(Integer)     
-    user_id= Column(Integer, ForeignKey('user.id')) 
-    
+    phone = Column(Integer) 
+
 class Planet(Base):
     __tablename__ = 'planet'
     id = Column(Integer, primary_key=True)
